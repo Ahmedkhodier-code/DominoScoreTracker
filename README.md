@@ -1,10 +1,10 @@
-# Domino Score Tracker (عداد الدومينو) 🎲☕
+# Domino Score Tracker
 
 A modern **Kotlin Multiplatform (KMP)** application built with **Jetpack Compose Multiplatform**, designed to track domino game scores, manage matches, competitors, bets & prizes, and review game history with an offline-first architecture.
 
 ---
 
-## 🌟 Key Features (المميزات الرئيسية)
+##  Key Features
 
 - **Kotlin Multiplatform (KMP)**: Shared logic (`sharedLogic`) and shared UI (`sharedUI`) targeting Android and iOS.
 - **Jetpack Compose Multiplatform & Material 3**: Beautiful, fluid, and responsive UI with custom styling matching Domino Cafe aesthetics.
@@ -21,7 +21,7 @@ A modern **Kotlin Multiplatform (KMP)** application built with **Jetpack Compose
 
 ---
 
-## 🏗️ Project Architecture (هيكلية المشروع)
+##  Project Architecture
 
 ```text
 DominoScoreTracker/
@@ -33,7 +33,7 @@ DominoScoreTracker/
 
 ---
 
-## 🛠️ Tech Stack (التقنيات المستخدمة)
+##  Tech Stack
 
 - **Language**: Kotlin 2.4+
 - **UI Framework**: Jetpack Compose Multiplatform (Material 3)
@@ -45,7 +45,7 @@ DominoScoreTracker/
 
 ---
 
-## 🚀 Getting Started (البدء السريع)
+##  Getting Started
 
 1. Clone the repository.
 2. Open the project in **Android Studio**.
