@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="domino_counter">DOMINO COUNTER</string>
+    <string name="create_game">Create Game</string>
+    <string name="challenge_info">CHALLENGE INFO</string>
+    <string name="game_name">Game Name</string>
+    <string name="required">Required</string>
+    <string name="game_name_hint">e.g., Weekend Match, Friday Derby</string>
+    <string name="competitors">COMPETITORS</string>
+    <string name="head_to_head">Head to Head</string>
+    <string name="team_1">Team 1</string>
+    <string name="team_1_hint">e.g., Falcons</string>
+    <string name="vs">VS</string>
+    <string name="team_2">Team 2</string>
+    <string name="team_2_hint">e.g., Knights</string>
+    <string name="prize">PRIZE</string>
+    <string name="prize_name">Prize Name</string>
+    <string name="prize_name_hint">e.g., Chips &amp; juice, Cafe bill</string>
+    <string name="prize_cost">Prize Cost</string>
+    <string name="prize_cost_hint">e.g., 50</string>
+    <string name="target_condition">TARGET CONDITION</string>
+    <string name="points_to_win">Points to Win</string>
+    <string name="target_score_to_win">Target Score to win</string>
+    <string name="start_game">Start Game</string>
+    <string name="games">Games</string>
+    <string name="new_game">New Game</string>
+    <string name="active_game_screen">Active Game Screen</string>
+    <string name="current_round">CURRENT ROUND</string>
+    <string name="target_to_win">Target to Win</string>
+    <string name="pts">pts</string>
+    <string name="leading">Leading</string>
+    <string name="trailing">Trailing</string>
+    <string name="round_points">Round Points</string>
+    <string name="add_points">Add Points</string>
+    <string name="switch_input_method">Switch Input Method</string>
+    <string name="quick_score_adjustment">Quick Score Adjustment</string>
+    <string name="action_retry">Retry</string>
+    <string name="settings">Settings</string>
+
+    <!-- Games List -->
+    <string name="games_list">Games List</string>
+    <string name="total_games">Total Games</string>
+    <string name="active_games">Active Games</string>
+    <string name="completed">Completed</string>
+    <string name="all_filter">All</string>
+    <string name="active_filter">Active</string>
+    <string name="completed_filter">Completed</string>
+    <string name="progress_to_target">Progress to target</string>
+    <string name="target_reached">Target reached</string>
+    <string name="egp">EGP</string>
+
+    <!-- Winner Dialog -->
+    <string name="win_announcement_screen">Win Announcement Screen</string>
+    <string name="match_end">MATCH END</string>
+    <string name="final_score">Final Score</string>
+    <string name="earned_prize">Earned Prize:</string>
+    <string name="finish_and_return">Finish &amp; Return to Main Menu</string>
+
+    <!-- Settings -->
+    <string name="pro_tag">PRO</string>
+    <string name="app_subtitle">Domino Counter • Cafe Companion</string>
+    <string name="version_info">Version 1.0.0 (Local Offline)</string>
+    <string name="appearance_and_theme">APPEARANCE &amp; THEME</string>
+    <string name="display_mode">Display Mode</string>
+    <string name="cafe_table_tag">Cafe Table</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_dark_default">Dark (Default)</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_system">System</string>
+    <string name="dark_mode_tip">Dark mode is comfortable for the eyes and specially designed to suit cafe atmosphere and soft lighting during long sessions.</string>
+    <string name="app_language">APP &amp; UI LANGUAGE</string>
+    <string name="arabic_lang">العربية</string>
+    <string name="arabic_sub">Full Right-to-Left alignment (RTL)</string>
+    <string name="english_lang">English</string>
+    <string name="english_sub">Left-to-Right layout (LTR)</string>
+    <string name="lang_tip">Changing interface direction supports Arabic (RTL) and English (LTR) fully while preserving score and number formatting.</string>
+    <string name="data_and_storage">DATA &amp; LOCAL STORAGE</string>
+    <string name="privacy_title">Your data is completely yours</string>
+    <string name="privacy_sub">Data and match records are saved 100% locally on your phone without sending any details to any server or needing internet access.</string>
+    <string name="clear_completed_games">Clear Finished Games History</string>
+    <string name="clear_completed_sub">Delete archived matches and keep settings</string>
+    <string name="reset_all_stats">Reset All Statistics</string>
+    <string name="reset_all_stats_sub">Reset match counters and score records permanently</string>
+    <string name="quick_play_preferences">QUICK PLAY PREFERENCES</string>
+    <string name="haptic_vibration">Tactile vibration on scoring</string>
+    <string name="haptic_vibration_sub">Haptic touch notification with every added point or double.</string>
+    <string name="keep_screen_active">Keep screen active during round</string>
+    <string name="keep_screen_active_sub">Prevent phone screen lock when device is placed on table.</string>
+    <string name="footer_text">Simple &amp; precise app for calculating domino scores &amp; drinks</string>
+    <string name="footer_sub">Crafted with joy for domino gatherings &amp; cafe sessions</string>
+</resources>

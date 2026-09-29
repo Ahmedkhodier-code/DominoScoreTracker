@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="domino_counter">عداد الدومينو</string>
+    <string name="create_game">إنشاء لعبة</string>
+    <string name="challenge_info">معلومات التحدي</string>
+    <string name="game_name">اسم المباراة</string>
+    <string name="required">مطلوب</string>
+    <string name="game_name_hint">مثال: مباراة الويك إند، ديربي الجمعة</string>
+    <string name="competitors">المنافسون</string>
+    <string name="head_to_head">رأس برأس</string>
+    <string name="team_1">الفريق 1</string>
+    <string name="team_1_hint">مثال: الصقور</string>
+    <string name="vs">ضد</string>
+    <string name="team_2">الفريق 2</string>
+    <string name="team_2_hint">مثال: الفرسان</string>
+    <string name="prize">الجائزة</string>
+    <string name="prize_name">اسم الجائزة</string>
+    <string name="prize_name_hint">مثال: شيبسي وعصير، حساب القهوة</string>
+    <string name="prize_cost">تكلفت الجائزة</string>
+    <string name="prize_cost_hint">مثال: 50</string>
+    <string name="target_condition">شرط الفوز</string>
+    <string name="points_to_win">النقاط المطلوبة للفوز</string>
+    <string name="target_score_to_win">الهدف للفوز</string>
+    <string name="start_game">بدء اللعبة</string>
+    <string name="games">الألعاب</string>
+    <string name="new_game">لعبة جديدة</string>
+    <string name="active_game_screen">شاشة اللعبة النشطة</string>
+    <string name="current_round">الجولة الحالية</string>
+    <string name="target_to_win">الهدف للفوز</string>
+    <string name="pts">نقطة</string>
+    <string name="leading">متصدر</string>
+    <string name="trailing">متأخر</string>
+    <string name="round_points">نقاط الجولة</string>
+    <string name="add_points">إضافة نقاط</string>
+    <string name="switch_input_method">تغيير طريقة الإدخال</string>
+    <string name="quick_score_adjustment">تعديل سريع للنتيجة</string>
+    <string name="action_retry">إعادة المحاولة</string>
+    <string name="settings">الإعدادات</string>
+
+    <!-- Games List -->
+    <string name="games_list">قائمة الألعاب</string>
+    <string name="total_games">إجمالي المباريات</string>
+    <string name="active_games">مباريات جارية</string>
+    <string name="completed">مكتملة</string>
+    <string name="all_filter">الكل</string>
+    <string name="active_filter">جارية</string>
+    <string name="completed_filter">منتهية</string>
+    <string name="progress_to_target">التقدم نحو الهدف</string>
+    <string name="target_reached">الهدف تم تجاوزه</string>
+    <string name="egp">ج.م</string>
+
+    <!-- Winner Dialog -->
+    <string name="win_announcement_screen">شاشة الفوز وإعلان النتيجة</string>
+    <string name="match_end">نهاية المباراة</string>
+    <string name="final_score">النتيجة النهائية</string>
+    <string name="earned_prize">الجائزة المستحقة:</string>
+    <string name="finish_and_return">إنهاء والعودة للقائمة الرئيسية</string>
+
+    <!-- Settings -->
+    <string name="pro_tag">برو</string>
+    <string name="app_subtitle">Domino Counter • رفيق المقاهي</string>
+    <string name="version_info">الإصدار 1.0.0 (محلي بدون إنترنت)</string>
+    <string name="appearance_and_theme">المظهر والسمة</string>
+    <string name="display_mode">وضع العرض</string>
+    <string name="cafe_table_tag">طاولة المقاهي</string>
+    <string name="theme_dark">داكن</string>
+    <string name="theme_dark_default">داكن (افتراضي)</string>
+    <string name="theme_light">فاتح (نهاري)</string>
+    <string name="theme_system">تلقائي (النظام)</string>
+    <string name="dark_mode_tip">الوضع الداكن مريح للعين ومصمم خصيصاً ليناسب أجواء المقاهي والإضاءة الهادئة أثناء الجلسات الطويلة.</string>
+    <string name="app_language">لغة التطبيق والواجهة</string>
+    <string name="arabic_lang">العربية</string>
+    <string name="arabic_sub">محاذاة كاملة من اليمين لليسار (RTL)</string>
+    <string name="english_lang">English</string>
+    <string name="english_sub">Left-to-Right layout (LTR)</string>
+    <string name="lang_tip">تغيير اتجاه الواجهة يدعم العربية (RTL) والإنجليزية (LTR) بالكامل مع الحفاظ التام على سلامة عرض النقاط والأرقام.</string>
+    <string name="data_and_storage">البيانات والتخزين المحلي</string>
+    <string name="privacy_title">بياناتك ملكك تماماً</string>
+    <string name="privacy_sub">البيانات وسجلات المباريات محفوظة محلياً بالكامل على هاتفك دون إرسال أي تفاصيل لأي خادم أو الحاجة إلى شبكة الإنترنت.</string>
+    <string name="clear_completed_games">مسح سجل الألعاب المنتهية</string>
+    <string name="clear_completed_sub">حذف المباريات المؤرشفة وإبقاء الإعدادات</string>
+    <string name="reset_all_stats">إعادة ضبط جميع الإحصائيات</string>
+    <string name="reset_all_stats_sub">تصفير عداد الماتشات وسجل النقاط نهائياً</string>
+    <string name="quick_play_preferences">تفضيلات اللعب السريع</string>
+    <string name="haptic_vibration">اهتزاز تكتيكي عند تسجيل النقاط</string>
+    <string name="haptic_vibration_sub">إشعار لمسي حاسم مع كل إضافة نقطة أو دوش.</string>
+    <string name="keep_screen_active">إبقاء الشاشة نشطة أثناء الجولة</string>
+    <string name="keep_screen_active_sub">منع قفل الهاتف عند وضع الجهاز وسط الطاولة.</string>
+    <string name="footer_text">تطبيق بسيط ودقيق لحساب نقاط الدومينو والمشاريب</string>
+    <string name="footer_sub">صُنع بمتعة لأصحاب القعدات وجلسات الدومينو الحماسية</string>
+</resources>
