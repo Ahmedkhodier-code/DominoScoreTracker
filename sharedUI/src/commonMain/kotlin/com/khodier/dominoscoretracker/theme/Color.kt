@@ -1,0 +1,83 @@
+package com.khodier.dominoscoretracker.theme
+
+import androidx.compose.ui.graphics.Color
+
+val SlateSurface = Color(0xFF0B1326)
+val SlateSurfaceDim = Color(0xFF0B1326)
+val SlateSurfaceBright = Color(0xFF31394D)
+val SlateSurfaceContainerLowest = Color(0xFF060E20)
+val SlateSurfaceContainerLow = Color(0xFF131B2E)
+val SlateSurfaceContainer = Color(0xFF171F33)
+val SlateSurfaceContainerHigh = Color(0xFF222A3D)
+val SlateSurfaceContainerHighest = Color(0xFF2D3449)
+val SlateOnSurface = Color(0xFFDAE2FD)
+val SlateOnSurfaceVariant = Color(0xFFBBCABF)
+val SlateInverseSurface = Color(0xFFDAE2FD)
+val SlateInverseOnSurface = Color(0xFF283044)
+val SlateOutline = Color(0xFF86948A)
+val SlateOutlineVariant = Color(0xFF3C4A42)
+
+val SlatePrimary = Color(0xFF4EDEA3)
+val SlateOnPrimary = Color(0xFF003824)
+val SlatePrimaryContainer = Color(0xFF10B981)
+val SlateOnPrimaryContainer = Color(0xFF00422B)
+val SlateInversePrimary = Color(0xFF006C49)
+
+val SlateSecondary = Color(0xFFFFB95F)
+val SlateOnSecondary = Color(0xFF472A00)
+val SlateSecondaryContainer = Color(0xFFEE9800)
+val SlateOnSecondaryContainer = Color(0xFF5B3800)
+
+val SlateTertiary = Color(0xFFC0C1FF)
+val SlateOnTertiary = Color(0xFF1000A9)
+val SlateTertiaryContainer = Color(0xFF9699FF)
+val SlateOnTertiaryContainer = Color(0xFF1D17B2)
+
+val SlateError = Color(0xFFFFB4AB)
+val SlateOnError = Color(0xFF690005)
+val SlateErrorContainer = Color(0xFF93000A)
+val SlateOnErrorContainer = Color(0xFFFFDAD6)
+
+val SlateBackground = Color(0xFF0B1326)
+val SlateOnBackground = Color(0xFFDAE2FD)
+val SlateSurfaceVariant = Color(0xFF2D3449)
+
+val LightSurface = Color(0xFFFAF8FF)
+val LightSurfaceDim = Color(0xFFD2D9F4)
+val LightSurfaceBright = Color(0xFFFAF8FF)
+val LightSurfaceContainerLowest = Color(0xFFFFFFFF)
+val LightSurfaceContainerLow = Color(0xFFF2F3FF)
+val LightSurfaceContainer = Color(0xFFEAEDFF)
+val LightSurfaceContainerHigh = Color(0xFFE2E7FF)
+val LightSurfaceContainerHighest = Color(0xFFDAE2FD)
+val LightOnSurface = Color(0xFF131B2E)
+val LightOnSurfaceVariant = Color(0xFF3D4A42)
+val LightInverseSurface = Color(0xFF283044)
+val LightInverseOnSurface = Color(0xFFEEF0FF)
+val LightOutline = Color(0xFF6D7A72)
+val LightOutlineVariant = Color(0xFFBCCAC0)
+
+val LightPrimary = Color(0xFF006948)
+val LightOnPrimary = Color(0xFFFFFFFF)
+val LightPrimaryContainer = Color(0xFF00855D)
+val LightOnPrimaryContainer = Color(0xFFF5FFF7)
+val LightInversePrimary = Color(0xFF68DBA9)
+
+val LightSecondary = Color(0xFF904D00)
+val LightOnSecondary = Color(0xFFFFFFFF)
+val LightSecondaryContainer = Color(0xFFFE932C)
+val LightOnSecondaryContainer = Color(0xFF663500)
+
+val LightTertiary = Color(0xFF0051D5)
+val LightOnTertiary = Color(0xFFFFFFFF)
+val LightTertiaryContainer = Color(0xFF316BF3)
+val LightOnTertiaryContainer = Color(0xFFFEFCFF)
+
+val LightError = Color(0xFFBA1A1A)
+val LightOnError = Color(0xFFFFFFFF)
+val LightErrorContainer = Color(0xFFFFDAD6)
+val LightOnErrorContainer = Color(0xFF93000A)
+
+val LightBackground = Color(0xFFFAF8FF)
+val LightOnBackground = Color(0xFF131B2E)
+val LightSurfaceVariant = Color(0xFFDAE2FD)
