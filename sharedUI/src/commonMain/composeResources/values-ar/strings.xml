@@ -54,7 +54,7 @@
     <string name="match_end">نهاية المباراة</string>
     <string name="final_score">النتيجة النهائية</string>
     <string name="earned_prize">الجائزة المستحقة:</string>
-    <string name="finish_and_return">إنهاء والعودة للقائمة الرئيسية</string>
+    <string name="finish_and_return">العودة للقائمة الرئيسية</string>
 
     <!-- Settings -->
     <string name="pro_tag">برو</string>

@@ -54,4 +54,8 @@ class GameViewModel(
             }
         }
     }
+
+    fun dismissWinnerDialog() {
+        _uiState.value = _uiState.value.copy(winnerTeam = null)
+    }
 }

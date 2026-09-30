@@ -54,7 +54,7 @@
     <string name="match_end">MATCH END</string>
     <string name="final_score">Final Score</string>
     <string name="earned_prize">Earned Prize:</string>
-    <string name="finish_and_return">Finish &amp; Return to Main Menu</string>
+    <string name="finish_and_return">Return to Main Menu</string>
 
     <!-- Settings -->
     <string name="pro_tag">PRO</string>

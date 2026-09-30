@@ -50,7 +50,8 @@ fun GameScreen(
         onBackClick = onBackClick,
         onAddScore = { team, score ->
             viewModel.addScore(team, score)
-        }
+        },
+        onDismissWinnerDialog = viewModel::dismissWinnerDialog
     )
 }
 
@@ -61,7 +62,8 @@ fun GameScreenContent(
     onGameEnded: (Int) -> Unit = {},
     onNewGameClick: () -> Unit = {},
     onBackClick: () -> Unit = {},
-    onAddScore: (Team, Int) -> Unit = { _, _ -> }
+    onAddScore: (Team, Int) -> Unit = { _, _ -> },
+    onDismissWinnerDialog: () -> Unit= {}
 ) {
     val primaryColor = MaterialTheme.colorScheme.primary
     val secondaryColor = MaterialTheme.colorScheme.secondary
@@ -285,8 +287,15 @@ fun GameScreenContent(
                         WinnerDialog(
                             game = game,
                             winnerTeam = winnerTeam,
-                            onNewGameClick = onNewGameClick,
-                            onFinishReturnHomeClick = onBackClick,
+                            onNewGameClick = {
+                                onDismissWinnerDialog()
+                                onNewGameClick()
+                            },
+                            onFinishReturnHomeClick = {
+                                onDismissWinnerDialog()
+                                onBackClick()
+                            },
+                            onDismissRequest = onDismissWinnerDialog,
                         )
                     }
                 }
