@@ -13,20 +13,6 @@ workflows:
       - name: Set gradlew permissions
         script: |
           chmod +x ./gradlew
-      - name: Build shared Kotlin framework for iOS Simulator
-        script: |
-          ./gradlew :sharedUI:embedAndSignAppleFrameworkForXcode \
-            -Pkotlin.native.cocoapods.platform=iphonesimulator \
-            -PXCODE_SDK_NAME=iphonesimulator \
-            -PXCODE_CONFIGURATION=Debug \
-            -PXCODE_TARGET_BUILD_DIR=build \
-            -PXCODE_BUILT_PRODUCTS_DIR=build \
-            -PXCODE_FRAMEWORKS_FOLDER_PATH=Frameworks \
-            -PTARGET_BUILD_DIR=build \
-            -PCONFIGURATION=Debug \
-            -PSDK_NAME=iphonesimulator \
-            -PARCHS=arm64 \
-            -PFRAMEWORKS_FOLDER_PATH=Frameworks
       - name: Build iOS app for Simulator
         script: |
           cd iosApp
