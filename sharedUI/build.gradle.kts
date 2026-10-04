@@ -8,7 +8,17 @@ plugins {
 }
 
 kotlin {
-    
+
+    listOf(
+        iosArm64(),
+        iosSimulatorArm64()
+    ).forEach { iosTarget ->
+        iosTarget.binaries.framework {
+            baseName = "sharedUI"
+            isStatic = true
+        }
+    }
+
     android {
        namespace = "com.khodier.dominoscoretracker.sharedUI"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
