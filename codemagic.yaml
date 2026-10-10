@@ -15,7 +15,7 @@ workflows:
           chmod +x ./gradlew
       - name: Build Kotlin framework via Gradle
         script: |
-          ./gradlew :sharedUI:linkDebugFrameworkIosSimulatorArm64
+          ./gradlew :sharedUI:assemble
       - name: Build iOS app for Simulator
         script: |
           cd iosApp
@@ -24,7 +24,7 @@ workflows:
             -scheme "$XCODE_SCHEME" \
             -sdk iphonesimulator \
             -destination 'generic/platform=iOS Simulator' \
-            CODE_SIGNINATION_ALLOWED=NO || xcodebuild build \
+            CODE_SIGNING_ALLOWED=NO || xcodebuild build \
             -project iosApp.xcodeproj \
             -scheme "$XCODE_SCHEME" \
             -sdk iphonesimulator \
