@@ -16,6 +16,7 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "sharedUI"
             isStatic = true
+            freeCompilerArgs += listOf("-Xbinary=bundleId=com.khodier.dominoscoretracker.sharedUI")
         }
     }
 
