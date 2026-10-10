@@ -1,10 +1,10 @@
 import SwiftUI
-import SharedLogic
+import SharedUI
 
 @main
 struct iOSApp: App {
     init() {
-        KoinInitKt.initKoin(additionalModules: [UiModuleKt.uiModule])
+        InitKoinUiKt.initKoinForIos()
     }
 
     var body: some Scene {
