@@ -29,3 +29,53 @@ workflows:
       - build/**/*.log
       - iosApp/**/*.app
       - ~/Library/Developer/Xcode/DerivedData/**/*.app
+
+  ios-ipa-build:
+    name: iOS IPA Build
+    instance_type: mac_mini_m2
+    max_build_duration: 30
+    environment:
+      groups: []
+      vars:
+        XCODE_WORKSPACE: "iosApp/iosApp.xcodeproj"
+        XCODE_SCHEME: "iosApp"
+      xcode: latest
+    scripts:
+      - name: Set gradlew permissions
+        script: |
+          chmod +x ./gradlew
+      - name: Build Kotlin framework via Gradle
+        script: |
+          ./gradlew :sharedUI:linkReleaseFrameworkIosArm64
+      - name: Create export options plist
+        script: |
+          cat <<EOF > exportOptions.plist
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+              <key>method</key>
+              <string>ad-hoc</string>
+              <key>compileBitcode</key>
+              <false/>
+          </dict>
+          </plist>
+          EOF
+      - name: Archive and Export IPA
+        script: |
+          cd iosApp
+          xcodebuild archive \
+            -project iosApp.xcodeproj \
+            -scheme "$XCODE_SCHEME" \
+            -archivePath build/iosApp.xcarchive \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO
+          xcodebuild -exportArchive \
+            -archivePath build/iosApp.xcarchive \
+            -exportOptionsPlist ../exportOptions.plist \
+            -exportPath build/output \
+            CODE_SIGNING_ALLOWED=NO || true
+    artifacts:
+      - iosApp/build/output/*.ipa
+      - iosApp/build/*.xcarchive
+      - build/**/*.log
