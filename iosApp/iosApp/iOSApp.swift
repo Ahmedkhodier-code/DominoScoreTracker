@@ -4,7 +4,7 @@ import sharedUI
 @main
 struct iOSApp: App {
     init() {
-        KoinHelper.shared.initKoinForIos()
+        KoinHelper().initKoinForIos()
     }
 
     var body: some Scene {

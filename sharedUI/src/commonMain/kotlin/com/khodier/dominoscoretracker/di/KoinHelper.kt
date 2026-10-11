@@ -1,6 +1,6 @@
 package com.khodier.dominoscoretracker.di
 
-object KoinHelper {
+class KoinHelper {
     fun initKoinForIos() {
         initKoin(listOf(uiModule))
     }
