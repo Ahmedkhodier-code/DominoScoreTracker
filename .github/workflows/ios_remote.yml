@@ -37,6 +37,7 @@ jobs:
 
       - name: Build and Install iOS App
         run: |
+          chmod +x gradlew
           xcodebuild -project iosApp/iosApp.xcodeproj -scheme iosApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 17' build
           
           APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "iosApp.app" -type d | head -n 1)
