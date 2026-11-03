@@ -27,7 +27,7 @@ jobs:
 
       - name: Boot iOS Simulator
         run: |
-          UDID=$(xcrun simctl list devices available "iPhone 15" | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -n 1)
+          UDID=$(xcrun simctl list devices available "iPhone 17" | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -n 1)
           if [ -z "$UDID" ]; then
             UDID=$(xcrun simctl list devices available "iPhone" | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -n 1)
           fi
@@ -37,7 +37,7 @@ jobs:
 
       - name: Build and Install iOS App
         run: |
-          xcodebuild -project iosApp/iosApp.xcodeproj -scheme iosApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15' build
+          xcodebuild -project iosApp/iosApp.xcodeproj -scheme iosApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 17' build
           
           APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "iosApp.app" -type d | head -n 1)
           echo "App path: $APP_PATH"
