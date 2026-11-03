@@ -38,14 +38,25 @@ jobs:
       - name: Build and Install iOS App
         run: |
           chmod +x gradlew
+          echo "Building KMP shared modules first..."
+          ./gradlew :sharedLogic:linkDebugFrameworkIosSimulatorArm64 --info
+          
+          echo "Building Xcode project..."
           xcodebuild -project iosApp/iosApp.xcodeproj -scheme iosApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 17' build
           
-          APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "iosApp.app" -type d | head -n 1)
+          APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "*.app" -type d | grep "Debug-iphonesimulator" | head -n 1)
           echo "App path: $APP_PATH"
+          if [ -z "$APP_PATH" ]; then
+            echo "Error: App path not found!"
+            exit 1
+          fi
           
           UDID=$(xcrun simctl list devices booted | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -n 1)
           xcrun simctl install "$UDID" "$APP_PATH"
-          xcrun simctl launch "$UDID" com.khodier.dominoscoretracker.iosApp || xcrun simctl launch "$UDID" iosApp
+          
+          BUNDLE_ID=$(defaults read "$APP_PATH/Info" CFBundleIdentifier 2>/dev/null || echo "com.khodier.dominoscoretracker.iosApp")
+          echo "Launching Bundle ID: $BUNDLE_ID"
+          xcrun simctl launch "$UDID" "$BUNDLE_ID"
 
       - name: Keep Runner Active for Testing
         run: |
