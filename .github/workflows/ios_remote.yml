@@ -58,8 +58,14 @@ jobs:
           echo "Launching Bundle ID: $BUNDLE_ID"
           xcrun simctl launch "$UDID" "$BUNDLE_ID"
 
-      - name: Keep Runner Active for Testing
+      - name: Start Cloudflare Tunnel for Simulator Stream
         run: |
-          echo "iOS App is built, installed, and running in the iOS Simulator!"
-          echo "You can check GitHub Actions logs for build status."
+          echo "Starting Cloudflare tunnel to expose simulator preview..."
+          # Start cloudflared tunnel
+          cloudflared tunnel --url http://localhost:8080 &
+          
+          echo "========================================================"
+          echo "App is running and tunnel is active! Check logs above for the .trycloudflare.com URL."
+          echo "========================================================"
+          
           sleep 3600
