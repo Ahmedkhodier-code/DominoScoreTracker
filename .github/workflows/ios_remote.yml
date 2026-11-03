@@ -58,14 +58,44 @@ jobs:
           echo "Launching Bundle ID: $BUNDLE_ID"
           xcrun simctl launch "$UDID" "$BUNDLE_ID"
 
-      - name: Start Cloudflare Tunnel for Simulator Stream
+      - name: Start Live Simulator Stream & Cloudflare Tunnel
         run: |
-          echo "Starting Cloudflare tunnel to expose simulator preview..."
-          # Start cloudflared tunnel
+          cat << 'EOF' > /tmp/stream_server.py
+          import http.server
+          import subprocess
+          import time
+
+          class StreamHandler(http.server.BaseHTTPRequestHandler):
+              def do_GET(self):
+                  self.send_response(200)
+                  self.send_header('Content-type', 'multipart/x-mixed-replace; boundary=frame')
+                  self.end_headers()
+                  while True:
+                      try:
+                          subprocess.run(['xcrun', 'simctl', 'io', 'booted', 'screenshot', '/tmp/sim_screen.png'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                          with open('/tmp/sim_screen.png', 'rb') as f:
+                              frame = f.read()
+                          self.wfile.write(b'--frame\r\n')
+                          self.wfile.write(b'Content-Type: image/png\r\n')
+                          self.wfile.write(f'Content-Length: {len(frame)}\r\n\r\n'.encode())
+                          self.wfile.write(frame)
+                          self.wfile.write(b'\r\n')
+                          time.sleep(0.5)
+                      except Exception:
+                          break
+
+          server = http.server.HTTPServer(('localhost', 8080), StreamHandler)
+          print("Streaming server started on port 8080")
+          server.serve_forever()
+          EOF
+
+          python3 /tmp/stream_server.py &
+
+          echo "Starting Cloudflare tunnel..."
           cloudflared tunnel --url http://localhost:8080 &
-          
+
           echo "========================================================"
-          echo "App is running and tunnel is active! Check logs above for the .trycloudflare.com URL."
+          echo "Live Simulator Stream is active! Open the .trycloudflare.com URL above."
           echo "========================================================"
-          
+
           sleep 3600
