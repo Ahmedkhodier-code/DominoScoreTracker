@@ -1,0 +1,53 @@
+name: KMP iOS Remote Stream
+
+on:
+  workflow_dispatch:
+
+jobs:
+  stream:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install cloudflared
+        run: |
+          brew install cloudflare/cloudflare/cloudflared
+
+      - name: Boot iOS Simulator
+        run: |
+          UDID=$(xcrun simctl list devices available "iPhone 15" | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -n 1)
+          if [ -z "$UDID" ]; then
+            UDID=$(xcrun simctl list devices available "iPhone" | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -n 1)
+          fi
+          echo "Booting device: $UDID"
+          xcrun simctl boot "$UDID" || true
+          open -a Simulator
+
+      - name: Build and Install iOS App
+        run: |
+          xcodebuild -project iosApp/iosApp.xcodeproj -scheme iosApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15' build
+          
+          APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "iosApp.app" -type d | head -n 1)
+          echo "App path: $APP_PATH"
+          
+          UDID=$(xcrun simctl list devices booted | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -n 1)
+          xcrun simctl install "$UDID" "$APP_PATH"
+          xcrun simctl launch "$UDID" com.khodier.dominoscoretracker.iosApp || xcrun simctl launch "$UDID" iosApp
+
+      - name: Keep Runner Active for Testing
+        run: |
+          echo "iOS App is built, installed, and running in the iOS Simulator!"
+          echo "You can check GitHub Actions logs for build status."
+          sleep 3600
