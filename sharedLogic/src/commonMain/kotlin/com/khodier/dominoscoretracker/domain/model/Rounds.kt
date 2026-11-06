@@ -1,4 +1,8 @@
 package com.khodier.dominoscoretracker.domain.model
 
-class Rounds {
-}
+data class Rounds(
+    val id: Long,
+    val gameId: Long,
+    val teamId: Long,
+    val points: Int
+)

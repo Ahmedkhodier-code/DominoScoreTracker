@@ -10,7 +10,9 @@ import com.khodier.dominoscoretracker.domain.usecase.CheckWinnerUseCase
 import com.khodier.dominoscoretracker.domain.usecase.UpdateScoreUseCase
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import com.khodier.dominoscoretracker.data.local.createPreferencesDataStore
+import com.khodier.dominoscoretracker.data.repository.RoundsRepositoryImpl
 import com.khodier.dominoscoretracker.data.repository.ThemeRepositoryImpl
+import com.khodier.dominoscoretracker.domain.repository.RoundsRepository
 import com.khodier.dominoscoretracker.domain.repository.ThemeRepository
 import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module
@@ -23,8 +25,10 @@ val appModule = module {
     }
     single { get<GameDatabase>().gameDao() }
     single { get<GameDatabase>().teamDao() }
-    single<GameRepository> { GameRepositoryImpl(get(), get()) }
+    single { get<GameDatabase>().roundsDao() }
+    single<GameRepository> { GameRepositoryImpl(get(), get(), get(), get()) }
     single<TeamRepository> { TeamRepositoryImpl(get()) }
+    single<RoundsRepository> { RoundsRepositoryImpl(get(), get(), get()) }
     single { createPreferencesDataStore() }
     single<ThemeRepository> { ThemeRepositoryImpl(get()) }
 
@@ -32,3 +36,4 @@ val appModule = module {
     factoryOf(::CheckWinnerUseCase)
 
 }
+ 
